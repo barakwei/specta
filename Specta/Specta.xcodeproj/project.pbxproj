@@ -691,7 +691,7 @@
 		E9536CCF1968D30B003D1FBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Specta Team";
 				TargetAttributes = {
 					E91713F019DF07BB00921712 = {
@@ -988,6 +988,7 @@
 		E91713FF19DF07BB00921712 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1009,6 +1010,7 @@
 		E917140019DF07BB00921712 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1346,6 +1348,7 @@
 				E917140019DF07BB00921712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E917141719DF07D700921712 /* Build configuration list for PBXNativeTarget "libSpecta-iOS" */ = {
 			isa = XCConfigurationList;
@@ -1354,6 +1357,7 @@
 				E917141919DF07D700921712 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9536CD21968D30B003D1FBA /* Build configuration list for PBXProject "Specta" */ = {
 			isa = XCConfigurationList;
