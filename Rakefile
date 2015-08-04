@@ -13,8 +13,12 @@ def execute(command, stdout=nil)
   system(command) or raise "** BUILD FAILED **"
 end
 
+def test(scheme)
+  execute "xcrun xcodebuild -workspace #{WORKSPACE} -scheme #{scheme} -configuration #{CONFIGURATION} test SYMROOT=build | xcpretty -c && exit ${PIPESTATUS[0]}"
+end
+
 def build(scheme, sdk, product)
-  execute "xcodebuild -workspace #{WORKSPACE} -scheme #{scheme} -sdk #{sdk} -configuration #{CONFIGURATION} SYMROOT=build"
+  execute "xcrun xcodebuild -workspace #{WORKSPACE} -scheme #{scheme} -sdk #{sdk} -configuration #{CONFIGURATION} SYMROOT=build"
   build_dir = "#{CONFIGURATION}#{sdk == 'macosx' ? '' : "-#{sdk}"}"
   "Specta/build/#{build_dir}/#{product}"
 end
@@ -28,15 +32,24 @@ def build_static_lib(scheme, sdk)
 end
 
 def lipo(bin1, bin2, output)
-  execute "lipo -create '#{bin1}' '#{bin2}' -output '#{output}'"
+  execute "xcrun lipo -create '#{bin1}' '#{bin2}' -output '#{output}'"
+end
+
+def code_signing_identity
+  ENV['SPT_CODE_SIGNING_IDENTITY'] || 'iPhone Developer'
 end
 
 def clean(scheme)
-  execute "xcodebuild -workspace #{WORKSPACE} -scheme #{scheme} clean"
+  execute "xcrun xcodebuild -workspace #{WORKSPACE} -scheme #{scheme} clean"
 end
 
 def puts_green(str)
   puts "#{GREEN_COLOR}#{str}#{NO_COLOR}"
+end
+
+desc 'Run tests'
+task :test do |t|
+  execute "xcrun xcodebuild test -workspace Specta.xcworkspace -scheme Specta"
 end
 
 desc 'clean'
@@ -77,7 +90,7 @@ task :build => :clean do |t|
   lipo(ios_static_lib, ios_sim_static_lib, ios_univ_static_lib)
 
   puts_green "\n=== CODESIGN iOS FRAMEWORK ==="
-  execute "/usr/bin/codesign --force --sign 'iPhone Developer' --resource-rules='#{ios_univ_framework}'/ResourceRules.plist '#{ios_univ_framework}'"
+  execute "xcrun codesign --force --sign \"#{code_signing_identity}\" --resource-rules='#{ios_univ_framework}'/ResourceRules.plist '#{ios_univ_framework}'"
 
   puts_green "\n=== COPY PRODUCTS ==="
   execute "yes | rm -rf Products"
@@ -93,7 +106,7 @@ end
 
 namespace 'templates' do
   install_directory = File.expand_path("~/Library/Developer/Xcode/Templates/File Templates/Specta")
-  templates_directory = File.expand_path("../templates/Specta", __FILE__)
+  templates_directory = File.expand_path("../misc/Specta", __FILE__)
 
   desc "Uninstall Specta templates"
   task :uninstall do
@@ -112,6 +125,16 @@ namespace 'templates' do
 
   desc "Remove and re-install Specta templates"
   task :reinstall => [:uninstall, :install]
+end
+
+namespace 'specs' do
+  task :ios => :clean do |t|
+    test("Specta-iOS")
+  end
+
+  task :osx => :clean do |t|
+    test("Specta")
+  end
 end
 
 task :default => [:build]

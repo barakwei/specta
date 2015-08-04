@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078CBC441ACCFC94000BC9FF /* SPTGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 078CBC431ACCFC94000BC9FF /* SPTGlobalBeforeAfterEach.h */; };
+		B27A96FD931E25BE3F7E615E /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = B27A9A666AF7370DC4D7F211 /* SPTExcludeGlobalBeforeAfterEach.h */; };
+		D0D022261AB8B983000DC090 /* PendingSpecTest5.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D022251AB8B983000DC090 /* PendingSpecTest5.m */; };
+		D0D022271AB8B983000DC090 /* PendingSpecTest5.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D022251AB8B983000DC090 /* PendingSpecTest5.m */; };
 		E917141D19DF0A3100921712 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = E963AB9B1968E13800A592DF /* SpectaDSL.m */; };
 		E917141E19DF0A3100921712 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = E963AB9B1968E13800A592DF /* SpectaDSL.m */; };
 		E917141F19DF0A3500921712 /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E963AB9E1968E13800A592DF /* SpectaUtility.m */; };
@@ -260,6 +264,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078CBC431ACCFC94000BC9FF /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
+		B27A9A666AF7370DC4D7F211 /* SPTExcludeGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTExcludeGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
+		D0D022251AB8B983000DC090 /* PendingSpecTest5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingSpecTest5.m; sourceTree = "<group>"; };
 		E91713F119DF07BB00921712 /* libSpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E917140919DF07D700921712 /* libSpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9288BE619BE182900DE96FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -273,7 +280,7 @@
 		E963AB971968E13800A592DF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E963AB991968E13800A592DF /* Specta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Specta.h; sourceTree = "<group>"; };
 		E963AB9A1968E13800A592DF /* SpectaDSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectaDSL.h; sourceTree = "<group>"; };
-		E963AB9B1968E13800A592DF /* SpectaDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectaDSL.m; sourceTree = "<group>"; };
+		E963AB9B1968E13800A592DF /* SpectaDSL.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = SpectaDSL.m; sourceTree = "<group>"; };
 		E963AB9C1968E13800A592DF /* SpectaTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectaTypes.h; sourceTree = "<group>"; };
 		E963AB9D1968E13800A592DF /* SpectaUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectaUtility.h; sourceTree = "<group>"; };
 		E963AB9E1968E13800A592DF /* SpectaUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectaUtility.m; sourceTree = "<group>"; };
@@ -295,7 +302,7 @@
 		E963ABE41968E15400A592DF /* AsyncSpecTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSpecTest.m; sourceTree = "<group>"; };
 		E963ABE51968E15400A592DF /* AsyncSpecTest2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSpecTest2.m; sourceTree = "<group>"; };
 		E963ABE61968E15400A592DF /* AsyncSpecTest3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSpecTest3.m; sourceTree = "<group>"; };
-		E963ABE71968E15400A592DF /* AsyncSpecTimeoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSpecTimeoutTest.m; sourceTree = "<group>"; };
+		E963ABE71968E15400A592DF /* AsyncSpecTimeoutTest.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = AsyncSpecTimeoutTest.m; sourceTree = "<group>"; };
 		E963ABE81968E15400A592DF /* CompilationTest1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompilationTest1.m; sourceTree = "<group>"; };
 		E963ABE91968E15400A592DF /* CompilationTest2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompilationTest2.m; sourceTree = "<group>"; };
 		E963ABEA1968E15400A592DF /* CompilationTest3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompilationTest3.m; sourceTree = "<group>"; };
@@ -435,6 +442,8 @@
 				E963ABAD1968E13800A592DF /* XCTest+Private.h */,
 				E963ABAE1968E13800A592DF /* XCTestCase+Specta.h */,
 				E963ABAF1968E13800A592DF /* XCTestCase+Specta.m */,
+				B27A9A666AF7370DC4D7F211 /* SPTExcludeGlobalBeforeAfterEach.h */,
+				078CBC431ACCFC94000BC9FF /* SPTGlobalBeforeAfterEach.h */,
 			);
 			path = Specta;
 			sourceTree = "<group>";
@@ -470,6 +479,7 @@
 				E963ABFB1968E15400A592DF /* PendingSpecTest2.m */,
 				E963ABFC1968E15400A592DF /* PendingSpecTest3.m */,
 				E982173419C758B90056C9BF /* PendingSpecTest4.m */,
+				D0D022251AB8B983000DC090 /* PendingSpecTest5.m */,
 				E963ABFD1968E15400A592DF /* ReRunTest.m */,
 				E963ABFE1968E15400A592DF /* SequenceTest.m */,
 				E963ABFF1968E15400A592DF /* SharedExamplesTest1.m */,
@@ -544,6 +554,8 @@
 				E963ABC41968E13800A592DF /* SPTCompiledExample.h in Headers */,
 				E963ABB41968E13800A592DF /* Specta.h in Headers */,
 				E963ABBA1968E13800A592DF /* SpectaTypes.h in Headers */,
+				B27A96FD931E25BE3F7E615E /* SPTExcludeGlobalBeforeAfterEach.h in Headers */,
+				078CBC441ACCFC94000BC9FF /* SPTGlobalBeforeAfterEach.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +864,7 @@
 				E963AC241968E15400A592DF /* DSLTest3.m in Sources */,
 				E963AC0C1968E15400A592DF /* AsyncSpecTest3.m in Sources */,
 				E963AC201968E15400A592DF /* DSLTest1.m in Sources */,
+				D0D022261AB8B983000DC090 /* PendingSpecTest5.m in Sources */,
 				E963AC3A1968E15400A592DF /* ReRunTest.m in Sources */,
 				E963AC461968E15400A592DF /* SharedExamplesTest5.m in Sources */,
 				E982173519C758B90056C9BF /* PendingSpecTest4.m in Sources */,
@@ -912,6 +925,7 @@
 				E963AC251968E15400A592DF /* DSLTest3.m in Sources */,
 				E963AC0D1968E15400A592DF /* AsyncSpecTest3.m in Sources */,
 				E963AC211968E15400A592DF /* DSLTest1.m in Sources */,
+				D0D022271AB8B983000DC090 /* PendingSpecTest5.m in Sources */,
 				E963AC3B1968E15400A592DF /* ReRunTest.m in Sources */,
 				E963AC471968E15400A592DF /* SharedExamplesTest5.m in Sources */,
 				E982173619C758B90056C9BF /* PendingSpecTest4.m in Sources */,
@@ -1083,11 +1097,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1127,12 +1144,15 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1257,6 +1277,7 @@
 				);
 				INFOPLIST_FILE = Specta/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1285,6 +1306,7 @@
 				);
 				INFOPLIST_FILE = Specta/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
