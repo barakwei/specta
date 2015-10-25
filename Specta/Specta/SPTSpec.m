@@ -33,6 +33,9 @@
     [self spt_unsetCurrentTestSuite];
   }
   [testSuite compile];
+  if (!testSuite.disabled && testSuite.hasFocusedExamples) {
+    [self spt_addFocusedExamplesTestSuite:testSuite];
+  }
   [super initialize];
 }
 
@@ -45,7 +48,36 @@
 }
 
 + (void)spt_setDisabled:(BOOL)disabled {
+  SPTTestSuite *testSuite = [self spt_testSuite];
+
+  if (testSuite.hasFocusedExamples) {
+    if (testSuite.disabled && !disabled) {
+      [self spt_addFocusedExamplesTestSuite:[self spt_testSuite]];
+    } else if (!testSuite.disabled && disabled) {
+      [self spt_removeFocusedExamplesTestSuite:[self spt_testSuite]];
+    }
+  }
   [self spt_testSuite].disabled = disabled;
+}
+
++ (NSArray *)spt_focusedExamplesTestSuites {
+  return [[NSThread currentThread] threadDictionary][spt_kFocusedExamplesTestSuitesKey] ?: @[];
+}
+
++ (void)spt_setFocusedExamplesTestSuites:(NSArray *)testSuites {
+  [[NSThread currentThread] threadDictionary][spt_kFocusedExamplesTestSuitesKey] = testSuites;
+}
+
++ (void)spt_removeFocusedExamplesTestSuite:(SPTTestSuite *)testSuite {
+  NSMutableArray *testSuites = [[self spt_focusedExamplesTestSuites] mutableCopy];
+  [testSuites removeObject:testSuite];
+  [self spt_setFocusedExamplesTestSuites:[testSuites copy]];
+}
+
++ (void)spt_addFocusedExamplesTestSuite:(SPTTestSuite *)testSuite {
+  NSMutableArray *testSuites = [[self spt_focusedExamplesTestSuites] mutableCopy];
+  [testSuites addObject:testSuite];
+  [self spt_setFocusedExamplesTestSuites:[testSuites copy]];
 }
 
 + (NSArray *)spt_allSpecClasses {
@@ -74,17 +106,6 @@
   });
 
   return allSpecClasses;
-}
-
-+ (BOOL)spt_focusedExamplesExist {
-  for (Class specClass in [self spt_allSpecClasses]) {
-    SPTTestSuite *testSuite = [specClass spt_testSuite];
-    if (testSuite.disabled == NO && [testSuite hasFocusedExamples]) {
-      return YES;
-    }
-  }
-
-  return NO;
 }
 
 + (SEL)spt_convertToTestMethod:(SPTCompiledExample *)example {
@@ -131,15 +152,15 @@
 
 - (void)spec {}
 
-- (BOOL)spt_shouldRunExample:(SPTCompiledExample *)example {
-  return [[self class] spt_isDisabled] == NO &&
-         (example.focused || [[self class] spt_focusedExamplesExist] == NO);
++ (BOOL)spt_shouldRunExample:(SPTCompiledExample *)example {
+  return [self spt_isDisabled] == NO &&
+         (example.focused || [self spt_focusedExamplesTestSuites].count == 0);
 }
 
 - (void)spt_runExample:(SPTCompiledExample *)example {
   [[NSThread currentThread] threadDictionary][spt_kCurrentSpecKey] = self;
 
-  if ([self spt_shouldRunExample:example]) {
+  if ([self.class spt_shouldRunExample:example]) {
     self.spt_pending = example.pending;
     example.block(self);
   } else if (!example.pending) {
@@ -160,6 +181,9 @@
 
   // dynamically generate test methods with compiled examples
   for (SPTCompiledExample *example in compiledExamples) {
+    if (![self spt_shouldRunExample:example]) {
+      continue;
+    }
     SEL sel = [self spt_convertToTestMethod:example];
     NSString *selName = NSStringFromSelector(sel);
     [selectors addObject: selName];

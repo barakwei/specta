@@ -33,7 +33,7 @@ SpecEnd
 @implementation FocusedSpecTest
 
 - (void)test_focused_examples_are_focused {
-  XCTAssertFalse([SPTSpec spt_focusedExamplesExist], @"Focused examples should not exist if the spec is disabled");
+  XCTAssertEqual([SPTSpec spt_focusedExamplesTestSuites].count, 0, @"Focused examples should not exist if the spec is disabled");
 
   SPTTestSuite *testSuite = [_FocusedSpecTestSpec spt_testSuite];
   assertTrue(testSuite.hasFocusedExamples);
@@ -71,7 +71,7 @@ SpecEnd
   XCTestSuiteRun *result = RunSpec(_FocusedSpecTestSpec);
   [_FocusedSpecTestSpec spt_setDisabled:YES];
 
-  assertEqual([result testCaseCount], 3);
+  assertEqual([result testCaseCount], 2);
   assertEqual([result unexpectedExceptionCount], 0);
   assertEqual([result failureCount], 0);
   assertTrue([result hasSucceeded]);

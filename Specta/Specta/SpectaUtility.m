@@ -4,6 +4,7 @@
 
 NSString * const spt_kCurrentTestSuiteKey = @"SPTCurrentTestSuite";
 NSString * const spt_kCurrentSpecKey = @"SPTCurrentSpec";
+NSString * const spt_kFocusedExamplesTestSuitesKey = @"SPTFocusedExamplesTestSuites";
 
 static unsigned int seed = 0;
 
