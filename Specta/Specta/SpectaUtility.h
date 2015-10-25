@@ -2,6 +2,7 @@
 
 extern NSString * const spt_kCurrentTestSuiteKey;
 extern NSString * const spt_kCurrentSpecKey;
+extern NSString * const spt_kFocusedExamplesTestSuitesKey;
 
 #define SPTCurrentTestSuite [[NSThread mainThread] threadDictionary][spt_kCurrentTestSuiteKey]
 #define SPTCurrentSpec  [[NSThread mainThread] threadDictionary][spt_kCurrentSpecKey]
