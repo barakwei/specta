@@ -6,7 +6,8 @@
 #import "SPTSharedExampleGroups.h"
 #import "SPTSpec.h"
 #import "SPTCallSite.h"
-#import <libkern/OSAtomic.h>
+
+#import <stdatomic.h>
 
 static NSTimeInterval asyncSpecTimeout = 10.0;
 
@@ -169,10 +170,10 @@ void waitUntil(void (^block)(DoneCallback done)) {
 }
 
 void waitUntilTimeout(NSTimeInterval timeout, void (^block)(DoneCallback done)) {
-  __block uint32_t complete = 0;
+  __block atomic_bool complete = false;
   dispatch_async(dispatch_get_main_queue(), ^{
     block(^{
-      OSAtomicOr32Barrier(1, &complete);
+      complete = true;
     });
   });
   NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeout];
