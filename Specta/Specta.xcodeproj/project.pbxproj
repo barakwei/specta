@@ -242,7 +242,7 @@
 		B27A9A666AF7370DC4D7F211 /* SPTExcludeGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTExcludeGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		D0D022251AB8B983000DC090 /* PendingSpecTest5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingSpecTest5.m; sourceTree = "<group>"; };
 		E91713F119DF07BB00921712 /* libSpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E917140919DF07D700921712 /* libSpecta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpecta.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917140919DF07D700921712 /* libSpecta-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSpecta-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9288BE619BE182900DE96FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9288BE919BE185600DE96FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9424CC919816DAF0094BED0 /* SPTCallSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTCallSite.h; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 				E9536D011968D3EE003D1FBA /* Specta.framework */,
 				E9536D0B1968D3EE003D1FBA /* Specta-iOSTests.xctest */,
 				E91713F119DF07BB00921712 /* libSpecta.a */,
-				E917140919DF07D700921712 /* libSpecta.a */,
+				E917140919DF07D700921712 /* libSpecta-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -545,7 +545,7 @@
 			);
 			name = "libSpecta-iOS";
 			productName = "libSpecta-iOS";
-			productReference = E917140919DF07D700921712 /* libSpecta.a */;
+			productReference = E917140919DF07D700921712 /* libSpecta-iOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E9536CD71968D30B003D1FBA /* Specta */ = {
@@ -990,7 +990,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.specta.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Specta;
+				PRODUCT_NAME = "Specta-iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -1009,7 +1009,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.specta.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Specta;
+				PRODUCT_NAME = "Specta-iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
