@@ -63,12 +63,4 @@ BOOL initialized = NO;
   [SPTCurrentSpec recordFailureWithDescription:description inFile:filename atLine:lineNumber expected:expected];
 }
 
-- (void)_recordUnexpectedFailureWithDescription:(NSString *)description exception:(NSException *)exception {
-  [SPTCurrentSpec _recordUnexpectedFailureWithDescription:description exception:exception];
-}
-
-- (_XCTestCaseImplementation *)internalImplementation {
-  return [SPTCurrentSpec internalImplementation];
-}
-
 @end
