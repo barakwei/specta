@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E9536D0A1968D3EE003D1FBA"
+               BuildableName = "Specta-iOSTests.xctest"
+               BlueprintName = "Specta-iOSTests"
+               ReferencedContainer = "container:Specta.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E917140819DF07D700921712"
+            BuildableName = "libSpecta.a"
+            BlueprintName = "libSpecta-iOS"
+            ReferencedContainer = "container:Specta.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
