@@ -2,7 +2,7 @@
 
 SpecBegin(_SharedExamplesTest4)
 
-__block __weak NSString *foo = nil;
+__block NSString *foo;
 
 beforeEach(^{
   foo = @"bar";
@@ -36,7 +36,7 @@ SharedExamplesEnd
 @implementation SharedExamplesTest4
 
 - (void)testSharedExamples {
-  XCTestSuiteRun *result = RunSpec(_SharedExamplesTest4Spec);
+  XCTestRun *result = RunSpec(_SharedExamplesTest4Spec);
   assertEqual([result testCaseCount], 2);
   assertEqual([result unexpectedExceptionCount], 0);
   assertEqual([result failureCount], 0);

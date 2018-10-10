@@ -59,7 +59,10 @@
       return;
     }
   }
-  [self _recordUnexpectedFailureWithDescription:description exception:exception];
+
+  // We cannot associate the exception with a specific file and line, throw it as an unexpected
+  // error.
+  [exception raise];
 }
 
 @end

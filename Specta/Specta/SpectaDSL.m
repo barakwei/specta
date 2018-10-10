@@ -61,10 +61,6 @@ void spt_itShouldBehaveLike_(NSString *fileName, NSUInteger lineNumber, NSString
         afterEach(^{
           [dataDict removeAllObjects];
         });
-
-        afterAll(^{
-          dataDict = nil;
-        });
       });
     } else {
       NSDictionary *data = dictionaryOrBlock;

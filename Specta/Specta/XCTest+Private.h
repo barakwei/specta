@@ -29,13 +29,3 @@
 - (void)startObserving;
 
 @end
-
-@interface _XCTestCaseImplementation : NSObject
-@end
-
-@interface XCTestCase ()
-
-- (_XCTestCaseImplementation *)internalImplementation;
-- (void)_recordUnexpectedFailureWithDescription:(NSString *)description exception:(NSException *)exception;
-
-@end
